@@ -1,32 +1,37 @@
-# Gatsby-Tina-React.js Documentation
+# Adding TinaCMS to a Gatsby Project
 
-Frameworks:
-- Gatsby: Static site generator
-- Tina: Content management (json + markdown content)
-- React.js: Web development (html + jsx)
+Tina provides a way to edit content directly within the webpage of a "gatsby develop" session. The following instructions will
+explain how to add the tool to a gatsby project, as well as how to begin populating editable content for site pages.
 
 ## Project Instantiation
 
-Install the Gatsby CLI and create the default Gatsby-Tina starter
+Install the Gatsby version of TinaCMS and its dependencies
 
 ```bash
-# If you don't have Gatsby CLI installed
-yarn global add gatsby-cli
-# Create a new starter blog
-gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog
-
-cd gatsby-starter-blog
-gatsby develop
+yarn add gatsby-plugin-tinacms styled-components
 ```
 
-## Usage
+## Add the TinaCMS Plugin
+gatsby-config.js
 
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```javascript
+module.exports = {
+  // ...
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        // The CMS will be disabled on your production site
+        enabled: process.env.NODE_ENV !== 'production',
+        sidebar: true,
+        plugins: [
+          // We'll add some gatsby-tinacms plugins later
+        ],
+      },
+    },
+    // ...
+  ],
+}
 ```
 
 ## Contributing
