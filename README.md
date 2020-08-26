@@ -1,6 +1,9 @@
-# Foobar
+# Gatsby-Tina-React.js Documentation
 
-Foobar is a Python library for dealing with word pluralization.
+Frameworks:
+- Gatsby: Static site generator
+- Tina: Content management
+- React.js: Web development (html + jsx)
 
 ## Installation
 
