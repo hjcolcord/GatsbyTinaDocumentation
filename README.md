@@ -2,15 +2,21 @@
 
 Frameworks:
 - Gatsby: Static site generator
-- Tina: Content management
+- Tina: Content management (json + markdown content)
 - React.js: Web development (html + jsx)
 
-## Installation
+## Project Instantiation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Install the Gatsby CLI and create the default Gatsby-Tina starter
 
 ```bash
-pip install foobar
+# If you don't have Gatsby CLI installed
+yarn global add gatsby-cli
+# Create a new starter blog
+gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog
+
+cd gatsby-starter-blog
+gatsby develop
 ```
 
 ## Usage
