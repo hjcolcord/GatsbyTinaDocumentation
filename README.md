@@ -8,7 +8,7 @@ explain how to add the tool to a gatsby project, as well as how to begin populat
 Install the Gatsby version of TinaCMS and its dependencies
 
 ```bash
-yarn add gatsby-plugin-tinacms styled-components
+yarn add gatsby-plugin-tinacms gatsby-tinacms-git gatsby-tinacms-json styled-components
 ```
 
 ## Add the TinaCMS Plugin
@@ -25,7 +25,7 @@ module.exports = {
         enabled: process.env.NODE_ENV !== 'production',
         sidebar: true,
         plugins: [
-          // We'll add some gatsby-tinacms plugins later
+          plugins: ['gatsby-tinacms-git', 'gatsby-tinacms-json'],
         ],
       },
     },
@@ -34,8 +34,32 @@ module.exports = {
 }
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Run The Development Server
+```bash
+yarn install && gatsby develop
+```
+
+
+## Adding a Page
+1. Create a "pages" subdirectory within the "src" directory of the project.
+2. Create a .js file with the desired url name within "pages".
+3. Add the required components to set up a basic React page. (seen below)
+```javascript
+import React from 'react';
+
+// import { useStaticQuery, graphql } from "gatsby"
+
+const Home = () => {
+
+    return (
+      <div>
+        {Page Content}
+      </div>
+    )
+};
+export default Home;
+
+```
 
 Please make sure to update tests as appropriate.
 
