@@ -44,6 +44,8 @@ yarn install && gatsby develop
 1. Create a "pages" subdirectory within the "src" directory of the project.
 2. Create a .js file with the desired url name within "pages".
 3. Add the required components to set up a basic React page. (seen below)
+
+index.js
 ```javascript
 import React from 'react';
 
@@ -62,6 +64,33 @@ export default Home;
 ```
 
 Please make sure to update tests as appropriate.
+
+## Create JSON Data to Query
+Within the /content/pages directory (as opposed to /src/pages), create a new JSON file to contain
+the data you would like to be editable. This data will be queried with GraphQl on individual pages.
+Arrays represent Tina block lists or group lists, while simplekey/value pairings represent all 
+other Tina fields. An example can be found below.
+
+index.json
+```javascript
+{
+  "title": "Home",
+  "path": "/home",
+  //Array of Tina blocks comprised of a title, content, and toggle value
+  "blocks": [
+    {
+      "title": "Section Title Test",
+      "content": "",
+      "center": false,
+    }
+  ],
+  //Image field
+  "heroImage": "../images/heroImage1.jpg",
+  "subHeroText": "paragraph content",
+  "displayTitle": true
+}
+
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
